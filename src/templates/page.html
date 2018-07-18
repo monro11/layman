@@ -1,0 +1,23 @@
+
+
+{% extends "layouts/_layout.html" %}
+
+
+{% block content %}
+<div class="layout">
+{% include "partials/_topbar.html" %}
+{% include "partials/_header.html" %}
+
+	<div class="container">
+		<div class="blog">
+		{% include "partials/_post-title.html" %}
+			<div class="post-slider">
+			{% import "data/data.html" as items %}	
+			{% for item in items.postSlider %}
+				{%include "partials/_post-slider.html" %}
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
