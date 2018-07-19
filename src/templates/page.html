@@ -11,14 +11,49 @@
 	<div class="container">
 		<div class="blog">
 		{% include "partials/_post-title.html" %}
+		{%include "partials/_main-post.html" %}
 			<div class="post-slider">
 			{% import "data/data.html" as items %}	
 			{% for item in items.postSlider %}
 				{%include "partials/_post-slider.html" %}
 			{% endfor %}
 			</div>
-				<div class="post-list"></div>
+			<div class="post-list">
+			{% import "data/post-data.html" as post %}
+			{% for item in post.postContent %}	
+				{% include "partials/_post.html" %}	
+			{% endfor %}
+			</div>
 		</div>
-	</div>
-</div>
+		<div class="sidebar">
+			<div class="hottest-video main-title"> Hottest video</div>
+			<div class="hottest-video__inner">
+			{% import "data/video-data.html" as video %}
+			{% for item in video.list %}	
+				{%include "partials/_hottest-video.html" %}
+			{% endfor %}	
+			</div>
+			<div class="main-title">Subscribe</div>
+			<div class="subscribe">
+				{%include "partials/_subscribe.html" %}
+			</div>
+		</div>
+  	</div>
+  </div>
+<div class="footer">
+		<div class="footer__logo">
+		<a href="#" class="footer__site-logo" style="background-image: url('img/logo.png')">
+		</a>
+		</div>
+		<div class="footer__nav">
+		{% import "data/nav-data.html" as nav %}
+			{% for item in nav.link %}
+				{%include "partials/_footer-nav.html" %}
+			{% endfor %}
+		<div class="footer__share">
+			<a href="#" class="facebook"></a>
+			<a href="#" class="twitter"></a>	
+		</div>
+</div>		
+
 {% endblock %}

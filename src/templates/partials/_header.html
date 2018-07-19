@@ -4,21 +4,20 @@
 					</a>
 					<div class="header__site-title">blog about politics</div>
 				</div>
-				
+
 				<div class="header__nav">
 					<div class="header__topnav">
-						<a href="">Privacy policy</a>
-						<a href="">Advertise</a>
-						<a href="">Term and condition</a>
+						<a href="#">Privacy policy</a>
+						<a href="#">Advertise</a>
+						<a href="#">Term and condition</a>
 					</div>
+					{% import "data/nav-data.html" as nav %}
+					
 					<div class="header__botnav">
-						<a href="">Main street</a>
-						<a href="">Washington DC</a>
-						<a href="">Wall street</a>
-						<a href="">Statewide</a>
-						<a href="">Politics</a>
-						<a href="">Just a bill</a>
-						<a href="">Video</a>
+						{% for item in nav.link %}
+						<a href="#">{{item.title}}</a>
+						{% endfor %}
 					</div>
+				
 				</div>
 			</div>
