@@ -1,0 +1,29 @@
+  <a href="#" class="post-title">
+    <div class="post-title__l main-title">{{item.titleL}}</div>
+    <div class="post-title__arrow"></div>
+    <div class="post-title__r">{{item.titleR}}</div>
+  </a>
+<div class="post">
+
+  <div class="post__preview" style="background-image: url({{item.img}})">
+  </div>
+  <div class="post__content">{{item.content}}
+    <div class="post__informers">
+      <a href="#" class="comments-counter regular">
+		<img src="img/comment.svg" alt="">
+			<span>12</span>
+		</a>
+      <div class="post__tag title">
+        <span>Tags:</span>
+    		{% for item in item.mass%}
+        <a href="#" class="post__tag-link">{{item.tag}}</a>,
+    		{% endfor %}
+      </div>
+      <div class="post__share">
+        <span>Share:</span>
+        <a href="#" class="facebook"></a>
+        <a href="#" class="twitter"></a>
+      </div>
+    </div>
+  </div>
+</div>
